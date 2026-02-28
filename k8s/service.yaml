@@ -4,8 +4,11 @@ metadata:
   name: react-client
   labels:
     app: react-client
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: react-client
   ports:
