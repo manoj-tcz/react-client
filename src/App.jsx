@@ -5,11 +5,12 @@ function App() {
   const [pageData, setPageData] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || "").trim().replace(/\/$/, "");
 
   useEffect(() => {
     const loadHomepage = async () => {
       try {
-        const response = await fetch("/api/home");
+        const response = await fetch(`${apiBaseUrl}/api/home`);
         if (!response.ok) {
           throw new Error("Request failed");
         }
