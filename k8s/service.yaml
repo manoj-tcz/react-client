@@ -5,7 +5,7 @@ metadata:
   labels:
     app: react-client
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: react-client
   ports:

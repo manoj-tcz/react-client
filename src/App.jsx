@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const loadHomepage = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/home");
+        const response = await fetch("/api/home");
         if (!response.ok) {
           throw new Error("Request failed");
         }
