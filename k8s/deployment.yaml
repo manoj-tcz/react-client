@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-client
+  labels:
+    app: react-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-client
+  template:
+    metadata:
+      labels:
+        app: react-client
+    spec:
+      containers:
+        - name: react-client
+          image: 723338844144.dkr.ecr.ap-south-1.amazonaws.com/react-client:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
