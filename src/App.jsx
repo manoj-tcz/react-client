@@ -5,7 +5,10 @@ function App() {
   const [pageData, setPageData] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
-  const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || "").trim().replace(/\/$/, "");
+  const configuredBase = import.meta.env.VITE_API_BASE_URL;
+  const apiBaseUrl = (configuredBase && configuredBase.trim() ? configuredBase : "")
+    .trim()
+    .replace(/\/$/, "");
 
   useEffect(() => {
     const loadHomepage = async () => {
