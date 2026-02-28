@@ -8,6 +8,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/group.name: fullstack-shared
 spec:
+  ingressClassName: alb
   rules:
     - host: www.devopsinfo.shop
       http:
